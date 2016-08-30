@@ -21,7 +21,7 @@ url_tail=url_initial[url_initial.index('&count='):]
 headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/600.5.17 (KHTML, like Gecko) Version/8.0.5 Safari/600.5.17"}
 def get_counts(url):
     data=data={'article_url': url}
-    counts=requests.get('http://localhost/wechat/demo.php?'+urllib.urlencode(data))
+    counts=requests.get('http://localhost/wechat/api.php?'+urllib.urlencode(data))
     counts=json.loads(counts.text)
     return counts
 def run(url_initial):
